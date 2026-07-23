@@ -1,0 +1,58 @@
+{
+  "authorities": [
+    {
+      "actions": [
+        "install",
+        "activate"
+      ],
+      "principal": "ota-updater",
+      "resource": "firmware-slot-b"
+    }
+  ],
+  "interfaces": [
+    {
+      "contract_hash": "sha256:3333333333333333333333333333333333333333333333333333333333333333",
+      "id": "telemetry.read",
+      "version": "2.0.0"
+    }
+  ],
+  "release": {
+    "name": "example-flight-controller",
+    "version": "2.0.0"
+  },
+  "rollback": {
+    "artifact_digest": "sha256:different-artifact",
+    "evidence_uri": "file:rollback-risky-candidate.json",
+    "procedure_id": "dual-slot-rollback-v1",
+    "status": "fail"
+  },
+  "sbom": {
+    "components": [
+      {
+        "id": "pkg:pypi/cbor-codec",
+        "licenses": [
+          "GPL-3.0-only"
+        ],
+        "name": "cbor-codec",
+        "version": "2.0.0"
+      },
+      {
+        "id": "pkg:pypi/remote-shell",
+        "licenses": [
+          "GPL-3.0-only"
+        ],
+        "name": "remote-shell",
+        "version": "0.1.0"
+      }
+    ]
+  },
+  "schema_version": "ota-evidence/v1",
+  "signed_manifest": {
+    "artifact_digest": "sha256:risky-candidate-artifact",
+    "verification": {
+      "identity": "unknown",
+      "status": "failed",
+      "verifier": "external-verifier-fixture"
+    }
+  }
+}

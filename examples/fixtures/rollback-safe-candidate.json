@@ -1,0 +1,7 @@
+{
+  "artifact_digest": "sha256:safe-candidate-artifact",
+  "fixture": true,
+  "procedure_id": "dual-slot-rollback-v1",
+  "result": "pass",
+  "schema_version": "example-rollback-evidence/v1"
+}

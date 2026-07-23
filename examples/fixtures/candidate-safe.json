@@ -1,0 +1,62 @@
+{
+  "authorities": [
+    {
+      "actions": [
+        "install"
+      ],
+      "principal": "ota-updater",
+      "resource": "firmware-slot-b"
+    }
+  ],
+  "interfaces": [
+    {
+      "contract_hash": "sha256:1111111111111111111111111111111111111111111111111111111111111111",
+      "id": "telemetry.read",
+      "version": "1.0.0"
+    },
+    {
+      "contract_hash": "sha256:2222222222222222222222222222222222222222222222222222222222222222",
+      "id": "actuator.command",
+      "version": "1.0.0"
+    }
+  ],
+  "release": {
+    "name": "example-flight-controller",
+    "version": "1.0.1"
+  },
+  "rollback": {
+    "artifact_digest": "sha256:safe-candidate-artifact",
+    "evidence_uri": "file:rollback-safe-candidate.json",
+    "procedure_id": "dual-slot-rollback-v1",
+    "status": "pass"
+  },
+  "sbom": {
+    "components": [
+      {
+        "id": "pkg:pypi/cbor-codec",
+        "licenses": [
+          "MIT"
+        ],
+        "name": "cbor-codec",
+        "version": "1.4.0"
+      },
+      {
+        "id": "pkg:pypi/safety-protocol",
+        "licenses": [
+          "Apache-2.0"
+        ],
+        "name": "safety-protocol",
+        "version": "3.2.1"
+      }
+    ]
+  },
+  "schema_version": "ota-evidence/v1",
+  "signed_manifest": {
+    "artifact_digest": "sha256:safe-candidate-artifact",
+    "verification": {
+      "identity": "release@example.invalid",
+      "status": "verified",
+      "verifier": "external-verifier-fixture"
+    }
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "allowed_licenses": [
+    "Apache-2.0",
+    "MIT"
+  ],
+  "exceptions": [
+    {
+      "approved_by": "fixture-release-safety-board",
+      "expires": "2026-08-01",
+      "id": "EXC-FIXTURE-COMMISSIONING",
+      "justification": "Synthetic fixture for a bounded commissioning window.",
+      "rule_ids": [
+        "AUTHORITY.PRIVILEGE_EXPANSION"
+      ],
+      "subjects": [
+        "ota-updater|firmware-slot-b|activate"
+      ]
+    }
+  ],
+  "manifest": {
+    "accepted_verification_statuses": [
+      "verified"
+    ],
+    "require_artifact_digest": true
+  },
+  "risk_budgets": {
+    "changed_dependencies": 0,
+    "incompatible_interfaces": 0,
+    "license_changes": 0,
+    "manifest_verification_failures": 0,
+    "new_dependencies": 0,
+    "privilege_expansions": 0,
+    "removed_interfaces": 0,
+    "rollback_failures": 0
+  },
+  "rollback": {
+    "required": true,
+    "required_fields": [
+      "procedure_id",
+      "evidence_uri",
+      "artifact_digest"
+    ]
+  },
+  "schema_version": "ota-policy/v1"
+}
+
